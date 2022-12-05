@@ -148,7 +148,7 @@
                             <th class="text-center">Danh mục</th>
                             <th class="text-center">Số lượng bài tập</th>
                         </tr>
-                        @foreach($dataRender as $item) 
+                        @foreach($dataRender as $item)
                         <!-- $list = $this->v['list'] trong LoadUsers -->
                             <tr>
                                 {{--<td><input type="checkbox" name="chk_hv[]" class="chk_hv" id="chk_hv_{{$item->id}}" value="{{$item->id}}"> </td>--}}
@@ -190,7 +190,6 @@
         <div class="text-center">
         </div>
         <div class="text-center">
-            {{$dataRender->appends($data)->links()}}
         </div>
         <index-cs ref="index_cs"></index-cs>
     </section>

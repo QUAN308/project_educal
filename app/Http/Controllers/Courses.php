@@ -31,7 +31,6 @@ class Courses extends Controller
         $this->v['cateData'] = $modelCate->loadCateOnePage();
         if($request->isMethod("post")){
             $data_course = [];
-            
             $addModel = new ModelsCourses();
             $data_course['course'] = $request->post();
             if ($request->hasFile('anh_khoa_hoc') && $request->file('anh_khoa_hoc')->isValid())

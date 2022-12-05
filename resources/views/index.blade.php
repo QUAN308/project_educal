@@ -177,7 +177,7 @@
                                         <span><i class="icon_star"></i>4.5 (42)</span>
                                     </div>
                                 </div>
-                                <h3 class="course__title"><a href="course-details.html">{{$item->ten_khoa_hoc}}</a></h3>
+                                <h3 class="course__title"><a href="detail-course/{{$item->id}}">{{$item->ten_khoa_hoc}}</a></h3>
                                 <div class="course__teacher d-flex align-items-center">
                                     <div class="course__teacher-thumb mr-15">
                                         <img src="../assets/img/course/teacher/teacher-4.jpg" alt="">
@@ -193,7 +193,7 @@
                                     @endif
                                 </div>
                                 <div class="course__btn">
-                                    <a href="course-details.html" class="link-btn">
+                                    <a href="detail-course/{{$item->id}}" class="link-btn">
                                         Know Details
                                         <i class="far fa-arrow-right"></i>
                                         <i class="far fa-arrow-right"></i>

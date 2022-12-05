@@ -12,11 +12,10 @@ class Courses extends Model
     use HasFactory;
     protected $table = "khoa_hoc";
     protected $fillable = ['khoa_hoc.id', "ten_khoa_hoc", "hinh_anh", "mo_ta", "gia", "khuyen_mai", "categories_id", "so_luong_bai_tap"];
-    public $timestamps = true;
 
     public function loadCourses(){
         $query = DB::table($this->table)->join("danh_muc", "khoa_hoc.categories_id", "=", "danh_muc.id")->select($this->fillable);
-        $res = $query->paginate(9);
+        $res = $query->get();
         return $res;
     }
     public function saveAddCourses($data){

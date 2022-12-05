@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class lecturers extends Model
 {
@@ -18,6 +19,31 @@ class lecturers extends Model
     }
     public function saveAddLecture($params){
         $res = DB::table($this->table)->insertGetId($params);
+        return $res;
+    }
+    public function detailLecturer($id){
+        $query = DB::table($this->table)->where('id', '=', $id);
+        $res = $query->first();
+        return $res;
+    }
+    public function saveUpdateLecture($params){
+        if(empty($params['cols']['id'])){
+            Session::push('error', "Không có dữ liệu nào để cập nhật");
+        }
+        $dataArray = [];
+        foreach($params['cols'] as $index => $value):
+            if($index == 'id'){
+                continue;
+            }
+            $dataArray[$index] = (strlen($value) == 0)?null:$value;
+        endforeach;
+        $res = DB::table($this->table)
+                ->where('id', $params['cols']['id'])
+                ->update($dataArray);
+        return $res;
+    }
+    public function letureDelete($id){
+        $res = DB::table($this->table)->where('id', '=', $id)->delete();
         return $res;
     }
 }

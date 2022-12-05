@@ -47,7 +47,38 @@ class lecturers extends Controller
         }
         return view("lecturers.addLecture", $this->v);
     }
-
+    public function detail($id, $params = []){
+        $this->v['title_giao_vien'] = "Chi tiết giáo viên";
+        $modelLecture = new ModelsLecturers();
+        $modelCate = new Categories();
+        $this->v['cateData'] = $modelCate->loadCateOnePage();
+        $this->v['detail_lecture'] = $modelLecture->detailLecturer($id);
+        return view('lecturers.detailLecture', $this->v);
+    }
+    public function updateLecturer($id, Request $request, $params = []){
+        $routeBack = "route_BackEnd_lecturer_detail";
+        $params['cols'] = $request->post();
+        unset($params['cols']['_token']);
+        $modelUpdate = new ModelsLecturers();
+        $params['cols']['id'] = $id;
+        $res = $modelUpdate->saveUpdateLecture($params);
+        if($res == null){
+            return redirect()->route($routeBack, ['id'=>$id]);
+        }elseif($res == 1){
+            Session::flash('success', "Cập nhật giảng viên Thành công");
+            return redirect()->route($routeBack, ['id'=>$id]);
+        }else{
+            Session::flash('error', 'Lỗi cập nhật giảng viên ' .$id);
+            return redirect()->route($routeBack, ['id' => $id]);
+        }
+    }
+    public function deleteLecturer($id){
+        $route_back = "route_BackEnd_courses_list";
+       $modelDelete = new ModelsLecturers();
+       $modelDelete->letureDelete($id);
+       Session::flash("success", "Đã xóa giảng viên ".$id);
+       return redirect()->route($route_back);
+    }
     public function uploadFile($file) {
         $fileName = time().'_'.$file->getClientOriginalName();
         return $file->storeAs('cmnd',$fileName,'public');

@@ -204,7 +204,7 @@
                     <ul class="treeview-menu">
                         <li><a href="/list_user"><i class="fa fa-circle-o"></i> Người dùng</a></li>
                         <li><a href="/categories"><i class="fa fa-circle-o"></i> Danh mục</a></li>
-                        <li><a href="/courses"><i class="fa fa-circle-o"></i> Khóa học</a></li>
+                        <li><a href="/list_courses"><i class="fa fa-circle-o"></i> Khóa học</a></li>
                         <li><a href="/students"><i class="fa fa-circle-o"></i> Học viên</a></li>
                         <li><a href="/lecturer"><i class="fa fa-circle-o"></i> Giáo viên</a></li>
                         <li><a href="/classes"><i class="fa fa-circle-o"></i> Lớp học</a></li>
