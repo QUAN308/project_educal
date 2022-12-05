@@ -10,17 +10,16 @@
             </div>
             <div class="container">
                 <div class="row">
+                
                     <div class="col-xxl-8 col-xl-8 col-lg-8">
                         <div class="course__wrapper">
                             <div class="page__title-content mb-25">
-                                <span class="page__title-pre">
-                                @foreach($cateData as $key => $value)
-                                    @if($data_detail->categories_id == $value->id)
-                                        {{$value->ten_danh_muc}}
+                                @foreach($cateData as $ket => $value)
+                                    @if($value->id == $courseData->categories_id)
+                                        <span class="page__title-pre">{{$value->ten_danh_muc}}</span>
                                     @endif
                                 @endforeach
-                                </span>
-                                <h5 class="page__title-3">{{ $data_detail->ten_khoa_hoc }}</h5>
+                                <h5 class="page__title-3">{{$courseData->ten_khoa_hoc}}</h5>
                             </div>
                             <div class="course__meta-2 d-sm-flex mb-30">
                                 <div class="course__teacher-3 d-flex align-items-center mr-70 mb-30">
@@ -51,7 +50,7 @@
                                 </div>
                             </div>
                             <div class="course__img w-img mb-30">
-                                <img src="{{ $data_detail->hinh_anh?''.Storage::url($data_detail->hinh_anh):'http://placehold.it/100x100' }}" alt="">
+                                <img src="{{ $courseData->hinh_anh?''.Storage::url($courseData->hinh_anh):'http://placehold.it/100x100' }}" alt="">
                             </div>
                             <div class="course__tab-2 mb-45">
                                 <ul class="nav nav-tabs" id="courseTab" role="tablist">
@@ -59,24 +58,18 @@
                                         <button class="nav-link active" id="description-tab" data-bs-toggle="tab"
                                             data-bs-target="#description" type="button" role="tab"
                                             aria-controls="description" aria-selected="true"> <i
-                                                class="icon_ribbon_alt"></i> <span>Discription</span> </button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link " id="curriculum-tab" data-bs-toggle="tab"
-                                            data-bs-target="#curriculum" type="button" role="tab"
-                                            aria-controls="curriculum" aria-selected="false"> <i
-                                                class="icon_book_alt"></i> <span>Curriculum</span> </button>
+                                                class="icon_ribbon_alt"></i> <span>Mô tả</span> </button>
                                     </li>
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="review-tab" data-bs-toggle="tab"
                                             data-bs-target="#review" type="button" role="tab" aria-controls="review"
-                                            aria-selected="false"> <i class="icon_star_alt"></i> <span>Reviews</span>
+                                            aria-selected="false"> <i class="icon_star_alt"></i> <span>Đánh giá</span>
                                         </button>
                                     </li>
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="member-tab" data-bs-toggle="tab"
                                             data-bs-target="#member" type="button" role="tab" aria-controls="member"
-                                            aria-selected="false"> <i class="fal fa-user"></i> <span>Members</span>
+                                            aria-selected="false"> <i class="fal fa-user"></i> <span>Học viên</span>
                                         </button>
                                     </li>
                                 </ul>
@@ -87,13 +80,7 @@
                                         aria-labelledby="description-tab">
                                         <div class="course__description">
                                             <h3>Tổng quan về khóa học</h3>
-                                            <p>{{$data_detail->mo_ta}}</p>
-                                            <div class="course__tag-2 mb-35 mt-35">
-                                                <i class="fal fa-tag"></i>
-                                                <a href="#">Big data,</a>
-                                                <a href="#">Data analysis,</a>
-                                                <a href="#">Data modeling</a>
-                                            </div>
+                                                <p>{{$courseData->mo_ta}}</p>
                                             <div class="course__description-list mb-45">
                                                 <h4>What is the Target Audience?</h4>
                                                 <ul>
@@ -897,11 +884,15 @@
                                     <div
                                         class="course__video-meta mb-25 d-flex align-items-center justify-content-between">
                                         <div class="course__video-price">
-                                            <h5>$74.<span>00</span> </h5>
-                                            <h5 class="old-price">$129.00</h5>
+                                            <h5>{{number_format($courseData->gia, 0)}}</h5>
+                                            @if($courseData->khuyen_mai == 1)
+                                                <h5 class="old-price"></h5>
+                                            @endif
                                         </div>
                                         <div class="course__video-discount">
+                                        @if($courseData->khuyen_mai == 1)
                                             <span>68% OFF</span>
+                                        @endif
                                         </div>
                                     </div>
                                     <div class="course__video-content mb-35">
@@ -918,7 +909,7 @@
                                                     </svg>
                                                 </div>
                                                 <div class="course__video-info">
-                                                    <h5><span>Instructor :</span> Eleanor Fant</h5>
+                                                    <h5><span>Giảng viên :</span> Tracey peace</h5>
                                                 </div>
                                             </li>
                                             <li class="d-flex align-items-center">
@@ -934,7 +925,7 @@
                                                     </svg>
                                                 </div>
                                                 <div class="course__video-info">
-                                                    <h5><span>Lectures :</span>14</h5>
+                                                    <h5><span>Bài giảng :</span>{{$courseData->so_luong_bai_tap}}</h5>
                                                 </div>
                                             </li>
                                             <li class="d-flex align-items-center">
@@ -948,7 +939,7 @@
                                                     </svg>
                                                 </div>
                                                 <div class="course__video-info">
-                                                    <h5><span>Duration :</span>6 weeks</h5>
+                                                    <h5><span>Thời gian học :</span>6 Tuần</h5>
                                                 </div>
                                             </li>
                                             <li class="d-flex align-items-center">
@@ -960,7 +951,7 @@
                                                     </svg>
                                                 </div>
                                                 <div class="course__video-info">
-                                                    <h5><span>Enrolled :</span>20 students</h5>
+                                                    <h5><span>Học viên :</span>43 Học viên</h5>
                                                 </div>
                                             </li>
                                             <li class="d-flex align-items-center">
@@ -985,88 +976,9 @@
                                         </a>
                                     </div>
                                     <div class="course__enroll-btn">
-                                        <a href="contact.html" class="e-btn e-btn-7 w-100">Enroll <i
+                                        <a href="contact.html" class="e-btn e-btn-7 w-100">Đăng ký<i
                                                 class="far fa-arrow-right"></i></a>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="course__sidebar-widget-2 white-bg mb-20">
-                                <div class="course__sidebar-course">
-                                    <h3 class="course__sidebar-title">Related courses</h3>
-                                    <ul>
-                                        <li>
-                                            <div class="course__sm d-flex align-items-center mb-30">
-                                                <div class="course__sm-thumb mr-20">
-                                                    <a href="#">
-                                                        <img src="../assets/img/course/sm/course-sm-1.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="course__sm-content">
-                                                    <div class="course__sm-rating">
-                                                        <ul>
-                                                            <li><a href="#"> <i class="icon_star"></i> </a></li>
-                                                            <li><a href="#"> <i class="icon_star"></i> </a></li>
-                                                            <li><a href="#"> <i class="icon_star"></i> </a></li>
-                                                            <li><a href="#"> <i class="icon_star"></i> </a></li>
-                                                            <li><a href="#"> <i class="icon_star"></i> </a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <h5><a href="#">Development</a></h5>
-                                                    <div class="course__sm-price">
-                                                        <span>$54.00</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="course__sm d-flex align-items-center mb-30">
-                                                <div class="course__sm-thumb mr-20">
-                                                    <a href="#">
-                                                        <img src="../assets/img/course/sm/course-sm-2.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="course__sm-content">
-                                                    <div class="course__sm-rating">
-                                                        <ul>
-                                                            <li><a href="#"> <i class="icon_star"></i> </a></li>
-                                                            <li><a href="#"> <i class="icon_star"></i> </a></li>
-                                                            <li><a href="#"> <i class="icon_star"></i> </a></li>
-                                                            <li><a href="#"> <i class="icon_star"></i> </a></li>
-                                                            <li><a href="#"> <i class="icon_star"></i> </a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <h5><a href="#">Data Science</a></h5>
-                                                    <div class="course__sm-price">
-                                                        <span>$72.00</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="course__sm d-flex align-items-center mb-10">
-                                                <div class="course__sm-thumb mr-20">
-                                                    <a href="#">
-                                                        <img src="../assets/img/course/sm/course-sm-3.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="course__sm-content">
-                                                    <div class="course__sm-rating">
-                                                        <ul>
-                                                            <li><a href="#"> <i class="icon_star"></i> </a></li>
-                                                            <li><a href="#"> <i class="icon_star"></i> </a></li>
-                                                            <li><a href="#"> <i class="icon_star"></i> </a></li>
-                                                            <li><a href="#"> <i class="icon_star"></i> </a></li>
-                                                            <li><a href="#"> <i class="icon_star"></i> </a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <h5><a href="#">UX Design</a></h5>
-                                                    <div class="course__sm-price">
-                                                        <span>Free</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>

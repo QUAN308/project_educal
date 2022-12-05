@@ -117,7 +117,7 @@
                             <div class="col-md-9 col-sm-8">
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <img id="anh_khoa_hoc_preview" src="{{ $data_detail->hinh_anh }}" alt="your image"
+                                        <img id="anh_khoa_hoc_preview" src="{{ $data_detail->hinh_anh?''.Storage::url($data_detail->hinh_anh):'http://placehold.it/100x100' }}" alt="your image"
                                              style="max-width: 200px; height:100px; margin-bottom: 10px;" class="img-fluid"/>
                                         <input type="file" name="anh_khoa_hoc" accept="image/*"
                                                class="form-control-file @error('anh_khoa_hoc') is-invalid @enderror" id="anh_khoa_hoc">

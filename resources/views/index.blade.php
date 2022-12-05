@@ -18,7 +18,7 @@
                                     trực tiếp
                                 </h3>
                                 <p>Gặp mặt và trao đổi với những giảng viên đã có kinh nghiệm nhiều năm.</p>
-                                <a href="course-grid.html" class="e-btn">Xem tất cả khóa học</a>
+                                <a href="/courses" class="e-btn">Xem tất cả khóa học</a>
                             </div>
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
@@ -85,7 +85,7 @@
                                 </svg>
                             </div>
                             <div class="category__content">
-                                <h4 class="category__title"><a href="course-details.html">{{$value->ten_danh_muc}}</a></h4>
+                                <h4 class="category__title"><a href="/course/{{$value->id}}">{{$value->ten_danh_muc}}</a></h4>
                                 <p>Danh mục</p>
                             </div>
                         </div>
@@ -162,7 +162,7 @@
                                 <div class="course__tag">
                                 @foreach($cateData as $key => $value)
                                     @if($item->categories_id == $value->id)
-                                        <a href="#" class="blue">{{ $value->ten_danh_muc }}</a>
+                                        <a href="" class="blue">{{ $value->ten_danh_muc }}</a>
                                     @endif
                                 @endforeach
                                 </div>

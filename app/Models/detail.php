@@ -19,4 +19,5 @@ class detail extends Model
         $res = $query->get();
         return $res;
     }
+    
 }

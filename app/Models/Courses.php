@@ -48,4 +48,10 @@ class Courses extends Model
         $res = DB::table($this->table)->where('id', '=', $id)->delete();
         return $res;
     }
+
+    public function loadCourseOnCate($id){
+        $query = DB::table($this->table)->where('categories_id', '=', $id);
+        $res = $query->get();
+        return $res;
+    }
 }

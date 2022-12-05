@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 // Phần load giao diện người dùng
 Route::get('/', "loadView@listCoursesView");
 Route::get('/courses', "loadView@courses");
+Route::get('/course/{id}', "loadView@cateCourse");
 Route::get('/detail-course/{id}', "loadView@detailCourse");
 
 // Phần login

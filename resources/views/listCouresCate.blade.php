@@ -1,7 +1,7 @@
 @extends('templates.layoutCoures');
 @section('content')
          <!-- page title area start -->
-         <section class="page__title-area page__title-height page__title-overlay d-flex align-items-center" data-background="assets/img/page-title/page-title.jpg">
+         <section class="page__title-area page__title-height page__title-overlay d-flex align-items-center" data-background="../assets/img/page-title/page-title.jpg">
             <div class="container">
                <div class="row">
                   <div class="col-xxl-12">
@@ -51,9 +51,6 @@
                                  <option>Option 1</option>
                                  <option>Option 2</option>
                                  <option>Option 3</option>
-                                 <option>Option 4</option>
-                                 <option>Option 5</option>
-                                 <option>Option 6</option>
                               </select>
                            </div>
                         </div>
@@ -76,7 +73,7 @@
                                           <div class="course__tag">
                                             @foreach($cateData as $key => $value)
                                                 @if($item->categories_id == $value->id)
-                                                    <a href="#">{{ $value->ten_danh_muc }}</a>
+                                                <a href="#">{{ $value->ten_danh_muc }}</a>
                                                 @endif
                                             @endforeach
                                           </div>
@@ -93,7 +90,7 @@
                                           <h3 class="course__title"><a href="detail-course/{{$item->id}}">{{$item->ten_khoa_hoc}}</a></h3>
                                           <div class="course__teacher d-flex align-items-center">
                                              <div class="course__teacher-thumb mr-15">
-                                                <img src="assets/img/course/teacher/teacher-1.jpg" alt="">
+                                                <img src="../assets/img/course/teacher/teacher-1.jpg" alt="">
                                              </div>
                                              <h6><a href="instructor-details.html">Jim Séchen</a></h6>
                                           </div>
@@ -123,7 +120,7 @@
                                           <div class="col-xxl-4 col-xl-4 col-lg-4">
                                              <div class="course__thumb course__thumb-list w-img p-relative fix">
                                                 <a href="course-details.html">
-                                                   <img src="assets/img/course/list/course-1.jpg" alt="">
+                                                   <img src="../assets/img/course/list/course-1.jpg" alt="">
                                                 </a>
                                                 <div class="course__tag">
                                                    <a href="#">Art & Design</a>
@@ -149,7 +146,7 @@
                                                    </div>
                                                    <div class="course__teacher d-flex align-items-center">
                                                       <div class="course__teacher-thumb mr-15">
-                                                         <img src="assets/img/course/teacher/teacher-1.jpg" alt="">
+                                                         <img src="../assets/img/course/teacher/teacher-1.jpg" alt="">
                                                       </div>
                                                       <h6><a href="instructor-details.html">Jim Séchen</a></h6>
                                                    </div>
@@ -177,7 +174,7 @@
                                           <div class="col-xxl-4 col-xl-4 col-lg-4">
                                              <div class="course__thumb course__thumb-list w-img p-relative fix">
                                                 <a href="course-details.html">
-                                                   <img src="assets/img/course/list/course-2.jpg" alt="">
+                                                   <img src="../assets/img/course/list/course-2.jpg" alt="">
                                                 </a>
                                                 <div class="course__tag">
                                                    <a href="#" class="sky-blue">Art & Design</a>
@@ -203,7 +200,7 @@
                                                    </div>
                                                    <div class="course__teacher d-flex align-items-center">
                                                       <div class="course__teacher-thumb mr-15">
-                                                         <img src="assets/img/course/teacher/teacher-2.jpg" alt="">
+                                                         <img src="../assets/img/course/teacher/teacher-2.jpg" alt="">
                                                       </div>
                                                       <h6><a href="instructor-details.html">Barry Tone</a></h6>
                                                    </div>
@@ -232,7 +229,7 @@
                                           <div class="col-xxl-4 col-xl-4 col-lg-4">
                                              <div class="course__thumb course__thumb-list w-img p-relative fix">
                                                 <a href="course-details.html">
-                                                   <img src="assets/img/course/list/course-3.jpg" alt="">
+                                                   <img src="../assets/img/course/list/course-3.jpg" alt="">
                                                 </a>
                                                 <div class="course__tag">
                                                    <a href="#" class="blue-2">Art & Design</a>
@@ -258,7 +255,7 @@
                                                    </div>
                                                    <div class="course__teacher d-flex align-items-center">
                                                       <div class="course__teacher-thumb mr-15">
-                                                         <img src="assets/img/course/teacher/teacher-3.jpg" alt="">
+                                                         <img src="../assets/img/course/teacher/teacher-3.jpg" alt="">
                                                       </div>
                                                       <h6><a href="instructor-details.html">Elon Gated</a></h6>
                                                    </div>
@@ -287,7 +284,7 @@
                                           <div class="col-xxl-4 col-xl-4 col-lg-4">
                                              <div class="course__thumb course__thumb-list w-img p-relative fix">
                                                 <a href="course-details.html">
-                                                   <img src="assets/img/course/list/course-4.jpg" alt="">
+                                                   <img src="../assets/img/course/list/course-4.jpg" alt="">
                                                 </a>
                                                 <div class="course__tag">
                                                    <a href="#" class="green">Art & Design</a>
@@ -313,7 +310,7 @@
                                                    </div>
                                                    <div class="course__teacher d-flex align-items-center">
                                                       <div class="course__teacher-thumb mr-15">
-                                                         <img src="assets/img/course/teacher/teacher-4.jpg" alt="">
+                                                         <img src="../assets/img/course/teacher/teacher-4.jpg" alt="">
                                                       </div>
                                                       <h6><a href="instructor-details.html">Eleanor Fant</a></h6>
                                                    </div>
@@ -342,7 +339,7 @@
                                           <div class="col-xxl-4 col-xl-4 col-lg-4">
                                              <div class="course__thumb course__thumb-list w-img p-relative fix">
                                                 <a href="course-details.html">
-                                                   <img src="assets/img/course/list/course-5.jpg" alt="">
+                                                   <img src="../assets/img/course/list/course-5.jpg" alt="">
                                                 </a>
                                                 <div class="course__tag">
                                                    <a href="#" class="blue">Art & Design</a>
@@ -368,7 +365,7 @@
                                                    </div>
                                                    <div class="course__teacher d-flex align-items-center">
                                                       <div class="course__teacher-thumb mr-15">
-                                                         <img src="assets/img/course/teacher/teacher-5.jpg" alt="">
+                                                         <img src="../assets/img/course/teacher/teacher-5.jpg" alt="">
                                                       </div>
                                                       <h6><a href="instructor-details.html">Pelican Steve</a></h6>
                                                    </div>
@@ -397,7 +394,7 @@
                                           <div class="col-xxl-4 col-xl-4 col-lg-4">
                                              <div class="course__thumb course__thumb-list w-img p-relative fix">
                                                 <a href="course-details.html">
-                                                   <img src="assets/img/course/list/course-6.jpg" alt="">
+                                                   <img src="../assets/img/course/list/course-6.jpg" alt="">
                                                 </a>
                                                 <div class="course__tag">
                                                    <a href="#" class="yellow">Art & Design</a>
@@ -423,7 +420,7 @@
                                                    </div>
                                                    <div class="course__teacher d-flex align-items-center">
                                                       <div class="course__teacher-thumb mr-15">
-                                                         <img src="assets/img/course/teacher/teacher-6.jpg" alt="">
+                                                         <img src="../assets/img/course/teacher/teacher-6.jpg" alt="">
                                                       </div>
                                                       <h6><a href="instructor-details.html">Elon Gated</a></h6>
                                                    </div>
@@ -498,7 +495,7 @@
             <div class="container">
                <div class="cta__inner blue-bg fix">
                   <div class="cta__shape">
-                     <img src="assets/img/cta/cta-shape.png" alt="">
+                     <img src="../assets/img/cta/cta-shape.png" alt="">
                   </div>
                   <div class="row align-items-center">
                      <div class="col-xxl-7 col-xl-7 col-lg-8 col-md-8">

@@ -57,7 +57,7 @@
                     <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-2 col-sm-4 col-6">
                         <div class="header__left d-flex">
                             <div class="logo">
-                                <a href="index.html">
+                                <a href="/">
                                     <img src="../assets/img/logo/logo.png" alt="logo">
                                 </a>
                             </div>
@@ -72,12 +72,11 @@
                                             <a href="/">Trang chủ</a>
                                         </li>
                                         <li class="has-dropdown">
-                                            <a href="/courses">Courses</a>
+                                            <a href="/courses">Khóa học</a>
                                             <ul class="submenu">
-                                                <li><a href="course-grid.html">Courses</a></li>
-                                                <li><a href="course-list.html">Course List</a></li>
-                                                <li><a href="course-sidebar.html">Course sidebar</a></li>
-                                                <li><a href="course-details.html">Course Details</a></li>
+                                                @foreach($cateData as $key => $value)
+                                                    <li><a href="/course/{{$value->id}}">{{$value->ten_danh_muc}}</a></li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                         <li class="has-dropdown">
@@ -111,19 +110,7 @@
                                     <input style="background: #f1f1f1;" type="text" placeholder="Search...">
                                     <button type="submit"><i class="fad fa-search"></i></button>
                                 </form>
-                                <div class="header__cart">
-                                    <a href="javascript:void(0);" class="cart-toggle-btn">
-                                        <div class="header__cart-icon">
-                                            <svg viewBox="0 0 24 24">
-                                                <circle class="st0" cx="9" cy="21" r="1" />
-                                                <circle class="st0" cx="20" cy="21" r="1" />
-                                                <path class="st0"
-                                                    d="M1,1h4l2.7,13.4c0.2,1,1,1.6,2,1.6h9.7c1,0,1.8-0.7,2-1.6L23,6H6" />
-                                            </svg>
-                                        </div>
-                                        <span class="cart-item">2</span>
-                                    </a>
-                                </div>
+                                
                             </div>
                             <div class="header__btn ml-20 d-none d-sm-block">
                                 <a href="sign-in.html" class="e-btn">Login</a>
