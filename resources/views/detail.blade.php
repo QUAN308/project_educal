@@ -424,7 +424,6 @@
                                             </div>
                                             <div class="course__comment mb-75">
                                                 <h3>2 Comments</h3>
-
                                                 <ul>
                                                     <li>
                                                         <div class="course__comment-box ">
@@ -675,194 +674,195 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xxl-12">
-                                        <div class="course__slider swiper-container pb-60">
-                                            <div class="swiper-wrapper">
-                                                <div
-                                                    class="course__item course__item-3 swiper-slide white-bg mb-30 fix">
-                                                    <div class="course__thumb w-img p-relative fix">
-                                                        <a href="course-details.html">
-                                                            <img src="../assets/img/course/course-1.jpg" alt="">
-                                                        </a>
-                                                        <div class="course__tag">
-                                                            <a href="#">Art & Design</a>
+                                    <!-- Khóa học liên quan -->
+                                        <div class="col-xxl-12">
+                                            <div class="course__slider swiper-container pb-60">
+                                                <div class="swiper-wrapper">
+                                                    <div
+                                                        class="course__item course__item-3 swiper-slide white-bg mb-30 fix">
+                                                        <div class="course__thumb w-img p-relative fix">
+                                                            <a href="course-details.html">
+                                                                <img src="../assets/img/course/course-1.jpg" alt="">
+                                                            </a>
+                                                            <div class="course__tag">
+                                                                <a href="#">Art & Design</a>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="course__content">
+                                                        <div class="course__content">
+                                                            <div
+                                                                class="course__meta d-flex align-items-center justify-content-between">
+                                                                <div class="course__lesson">
+                                                                    <span><i class="far fa-book-alt"></i>43 Lesson</span>
+                                                                </div>
+                                                                <div class="course__rating">
+                                                                    <span><i class="icon_star"></i>4.5 (44)</span>
+                                                                </div>
+                                                            </div>
+                                                            <h3 class="course__title"><a href="course-details.html">Become a
+                                                                    product Manager learn the skills & job.</a></h3>
+                                                            <div class="course__teacher d-flex align-items-center">
+                                                                <div class="course__teacher-thumb mr-15">
+                                                                    <img src="../assets/img/course/teacher/teacher-1.jpg"
+                                                                        alt="">
+                                                                </div>
+                                                                <h6><a href="instructor-details.html">Jim Séchen</a></h6>
+                                                            </div>
+                                                        </div>
                                                         <div
-                                                            class="course__meta d-flex align-items-center justify-content-between">
-                                                            <div class="course__lesson">
-                                                                <span><i class="far fa-book-alt"></i>43 Lesson</span>
+                                                            class="course__more d-flex justify-content-between align-items-center">
+                                                            <div class="course__status">
+                                                                <span>Free</span>
                                                             </div>
-                                                            <div class="course__rating">
-                                                                <span><i class="icon_star"></i>4.5 (44)</span>
+                                                            <div class="course__btn">
+                                                                <a href="course-details.html" class="link-btn">
+                                                                    Know Details
+                                                                    <i class="far fa-arrow-right"></i>
+                                                                    <i class="far fa-arrow-right"></i>
+                                                                </a>
                                                             </div>
-                                                        </div>
-                                                        <h3 class="course__title"><a href="course-details.html">Become a
-                                                                product Manager learn the skills & job.</a></h3>
-                                                        <div class="course__teacher d-flex align-items-center">
-                                                            <div class="course__teacher-thumb mr-15">
-                                                                <img src="../assets/img/course/teacher/teacher-1.jpg"
-                                                                    alt="">
-                                                            </div>
-                                                            <h6><a href="instructor-details.html">Jim Séchen</a></h6>
                                                         </div>
                                                     </div>
                                                     <div
-                                                        class="course__more d-flex justify-content-between align-items-center">
-                                                        <div class="course__status">
-                                                            <span>Free</span>
-                                                        </div>
-                                                        <div class="course__btn">
-                                                            <a href="course-details.html" class="link-btn">
-                                                                Know Details
-                                                                <i class="far fa-arrow-right"></i>
-                                                                <i class="far fa-arrow-right"></i>
+                                                        class="course__item course__item-3 swiper-slide white-bg mb-30 fix">
+                                                        <div class="course__thumb w-img p-relative fix">
+                                                            <a href="course-details.html">
+                                                                <img src="../assets/img/course/course-2.jpg" alt="">
                                                             </a>
+                                                            <div class="course__tag">
+                                                                <a href="#" class="sky-blue">Mechanical</a>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="course__item course__item-3 swiper-slide white-bg mb-30 fix">
-                                                    <div class="course__thumb w-img p-relative fix">
-                                                        <a href="course-details.html">
-                                                            <img src="../assets/img/course/course-2.jpg" alt="">
-                                                        </a>
-                                                        <div class="course__tag">
-                                                            <a href="#" class="sky-blue">Mechanical</a>
+                                                        <div class="course__content">
+                                                            <div
+                                                                class="course__meta d-flex align-items-center justify-content-between">
+                                                                <div class="course__lesson">
+                                                                    <span><i class="far fa-book-alt"></i>72 Lesson</span>
+                                                                </div>
+                                                                <div class="course__rating">
+                                                                    <span><i class="icon_star"></i>4.5 (44)</span>
+                                                                </div>
+                                                            </div>
+                                                            <h3 class="course__title"><a
+                                                                    href="course-details.html">Fundamentals of music theory
+                                                                    Learn new</a></h3>
+                                                            <div class="course__teacher d-flex align-items-center">
+                                                                <div class="course__teacher-thumb mr-15">
+                                                                    <img src="../assets/img/course/teacher/teacher-2.jpg"
+                                                                        alt="">
+                                                                </div>
+                                                                <h6><a href="instructor-details.html">Barry Tone</a></h6>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="course__content">
                                                         <div
-                                                            class="course__meta d-flex align-items-center justify-content-between">
-                                                            <div class="course__lesson">
-                                                                <span><i class="far fa-book-alt"></i>72 Lesson</span>
+                                                            class="course__more d-flex justify-content-between align-items-center">
+                                                            <div class="course__status d-flex align-items-center">
+                                                                <span class="sky-blue">$32.00</span>
+                                                                <span class="old-price">$68.00</span>
                                                             </div>
-                                                            <div class="course__rating">
-                                                                <span><i class="icon_star"></i>4.5 (44)</span>
+                                                            <div class="course__btn">
+                                                                <a href="course-details.html" class="link-btn">
+                                                                    Know Details
+                                                                    <i class="far fa-arrow-right"></i>
+                                                                    <i class="far fa-arrow-right"></i>
+                                                                </a>
                                                             </div>
-                                                        </div>
-                                                        <h3 class="course__title"><a
-                                                                href="course-details.html">Fundamentals of music theory
-                                                                Learn new</a></h3>
-                                                        <div class="course__teacher d-flex align-items-center">
-                                                            <div class="course__teacher-thumb mr-15">
-                                                                <img src="../assets/img/course/teacher/teacher-2.jpg"
-                                                                    alt="">
-                                                            </div>
-                                                            <h6><a href="instructor-details.html">Barry Tone</a></h6>
                                                         </div>
                                                     </div>
                                                     <div
-                                                        class="course__more d-flex justify-content-between align-items-center">
-                                                        <div class="course__status d-flex align-items-center">
-                                                            <span class="sky-blue">$32.00</span>
-                                                            <span class="old-price">$68.00</span>
-                                                        </div>
-                                                        <div class="course__btn">
-                                                            <a href="course-details.html" class="link-btn">
-                                                                Know Details
-                                                                <i class="far fa-arrow-right"></i>
-                                                                <i class="far fa-arrow-right"></i>
+                                                        class="course__item course__item-3 swiper-slide white-bg mb-30 fix">
+                                                        <div class="course__thumb w-img p-relative fix">
+                                                            <a href="course-details.html">
+                                                                <img src="../assets/img/course/course-3.jpg" alt="">
                                                             </a>
+                                                            <div class="course__tag">
+                                                                <a href="#" class="green">Development</a>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="course__item course__item-3 swiper-slide white-bg mb-30 fix">
-                                                    <div class="course__thumb w-img p-relative fix">
-                                                        <a href="course-details.html">
-                                                            <img src="../assets/img/course/course-3.jpg" alt="">
-                                                        </a>
-                                                        <div class="course__tag">
-                                                            <a href="#" class="green">Development</a>
+                                                        <div class="course__content">
+                                                            <div
+                                                                class="course__meta d-flex align-items-center justify-content-between">
+                                                                <div class="course__lesson">
+                                                                    <span><i class="far fa-book-alt"></i>14 Lesson</span>
+                                                                </div>
+                                                                <div class="course__rating">
+                                                                    <span><i class="icon_star"></i>3.5 (55)</span>
+                                                                </div>
+                                                            </div>
+                                                            <h3 class="course__title"><a href="course-details.html">Strategy
+                                                                    law and organization Foundation</a></h3>
+                                                            <div class="course__teacher d-flex align-items-center">
+                                                                <div class="course__teacher-thumb mr-15">
+                                                                    <img src="../assets/img/course/teacher/teacher-3.jpg"
+                                                                        alt="">
+                                                                </div>
+                                                                <h6><a href="instructor-details.html">Elon Gated</a></h6>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="course__content">
                                                         <div
-                                                            class="course__meta d-flex align-items-center justify-content-between">
-                                                            <div class="course__lesson">
-                                                                <span><i class="far fa-book-alt"></i>14 Lesson</span>
+                                                            class="course__more d-flex justify-content-between align-items-center">
+                                                            <div class="course__status d-flex align-items-center">
+                                                                <span class="green">$46.00</span>
+                                                                <span class="old-price">$68.00</span>
                                                             </div>
-                                                            <div class="course__rating">
-                                                                <span><i class="icon_star"></i>3.5 (55)</span>
+                                                            <div class="course__btn">
+                                                                <a href="course-details.html" class="link-btn">
+                                                                    Know Details
+                                                                    <i class="far fa-arrow-right"></i>
+                                                                    <i class="far fa-arrow-right"></i>
+                                                                </a>
                                                             </div>
-                                                        </div>
-                                                        <h3 class="course__title"><a href="course-details.html">Strategy
-                                                                law and organization Foundation</a></h3>
-                                                        <div class="course__teacher d-flex align-items-center">
-                                                            <div class="course__teacher-thumb mr-15">
-                                                                <img src="../assets/img/course/teacher/teacher-3.jpg"
-                                                                    alt="">
-                                                            </div>
-                                                            <h6><a href="instructor-details.html">Elon Gated</a></h6>
                                                         </div>
                                                     </div>
                                                     <div
-                                                        class="course__more d-flex justify-content-between align-items-center">
-                                                        <div class="course__status d-flex align-items-center">
-                                                            <span class="green">$46.00</span>
-                                                            <span class="old-price">$68.00</span>
-                                                        </div>
-                                                        <div class="course__btn">
-                                                            <a href="course-details.html" class="link-btn">
-                                                                Know Details
-                                                                <i class="far fa-arrow-right"></i>
-                                                                <i class="far fa-arrow-right"></i>
+                                                        class="course__item course__item-3 swiper-slide white-bg mb-30 fix">
+                                                        <div class="course__thumb w-img p-relative fix">
+                                                            <a href="course-details.html">
+                                                                <img src="../assets/img/course/course-4.jpg" alt="">
                                                             </a>
+                                                            <div class="course__tag">
+                                                                <a href="#" class="blue">Marketing</a>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="course__item course__item-3 swiper-slide white-bg mb-30 fix">
-                                                    <div class="course__thumb w-img p-relative fix">
-                                                        <a href="course-details.html">
-                                                            <img src="../assets/img/course/course-4.jpg" alt="">
-                                                        </a>
-                                                        <div class="course__tag">
-                                                            <a href="#" class="blue">Marketing</a>
+                                                        <div class="course__content">
+                                                            <div
+                                                                class="course__meta d-flex align-items-center justify-content-between">
+                                                                <div class="course__lesson">
+                                                                    <span><i class="far fa-book-alt"></i>22 Lesson</span>
+                                                                </div>
+                                                                <div class="course__rating">
+                                                                    <span><i class="icon_star"></i>4.5 (42)</span>
+                                                                </div>
+                                                            </div>
+                                                            <h3 class="course__title"><a href="course-details.html">The
+                                                                    business Intelligence analyst Course 2022</a></h3>
+                                                            <div class="course__teacher d-flex align-items-center">
+                                                                <div class="course__teacher-thumb mr-15">
+                                                                    <img src="../assets/img/course/teacher/teacher-4.jpg"
+                                                                        alt="">
+                                                                </div>
+                                                                <h6><a href="instructor-details.html">Eleanor Fant</a></h6>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="course__content">
                                                         <div
-                                                            class="course__meta d-flex align-items-center justify-content-between">
-                                                            <div class="course__lesson">
-                                                                <span><i class="far fa-book-alt"></i>22 Lesson</span>
+                                                            class="course__more d-flex justify-content-between align-items-center">
+                                                            <div class="course__status d-flex align-items-center">
+                                                                <span class="blue">$62.00</span>
+                                                                <span class="old-price">$97.00</span>
                                                             </div>
-                                                            <div class="course__rating">
-                                                                <span><i class="icon_star"></i>4.5 (42)</span>
+                                                            <div class="course__btn">
+                                                                <a href="course-details.html" class="link-btn">
+                                                                    Know Details
+                                                                    <i class="far fa-arrow-right"></i>
+                                                                    <i class="far fa-arrow-right"></i>
+                                                                </a>
                                                             </div>
-                                                        </div>
-                                                        <h3 class="course__title"><a href="course-details.html">The
-                                                                business Intelligence analyst Course 2022</a></h3>
-                                                        <div class="course__teacher d-flex align-items-center">
-                                                            <div class="course__teacher-thumb mr-15">
-                                                                <img src="../assets/img/course/teacher/teacher-4.jpg"
-                                                                    alt="">
-                                                            </div>
-                                                            <h6><a href="instructor-details.html">Eleanor Fant</a></h6>
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                        class="course__more d-flex justify-content-between align-items-center">
-                                                        <div class="course__status d-flex align-items-center">
-                                                            <span class="blue">$62.00</span>
-                                                            <span class="old-price">$97.00</span>
-                                                        </div>
-                                                        <div class="course__btn">
-                                                            <a href="course-details.html" class="link-btn">
-                                                                Know Details
-                                                                <i class="far fa-arrow-right"></i>
-                                                                <i class="far fa-arrow-right"></i>
-                                                            </a>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <!-- Add Pagination -->
+                                                <div class="swiper-pagination"></div>
                                             </div>
-                                            <!-- Add Pagination -->
-                                            <div class="swiper-pagination"></div>
                                         </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>

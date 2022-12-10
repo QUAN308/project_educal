@@ -207,7 +207,7 @@
                         <li><a href="/list_courses"><i class="fa fa-circle-o"></i> Khóa học</a></li>
                         <li><a href="/students"><i class="fa fa-circle-o"></i> Học viên</a></li>
                         <li><a href="/lecturer"><i class="fa fa-circle-o"></i> Giáo viên</a></li>
-                        <li><a href="/classes"><i class="fa fa-circle-o"></i> Lớp học</a></li>
+                        <li><a href="/classes"></a></li>
                     </ul>
                 </li>
             </ul>
