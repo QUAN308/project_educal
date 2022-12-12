@@ -67,7 +67,7 @@
                     <span class="sr-only">Close</span>
                 </button>
             </div>
-    @endif
+        @endif
 
     <!-- Phần nội dung riêng của action  -->
         <form class="form-horizontal " action="" method="post" enctype="multipart/form-data">
@@ -76,73 +76,53 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="ten_de_thi" class="col-md-3 col-sm-4 control-label">Tên khóa học<span class="text-danger">(*)</span></label>
+                            <label for="ten_de_thi" class="col-md-3 col-sm-4 control-label">Tên lớp học<span class="text-danger">(*)</span></label>
                             <div class="col-md-9 col-sm-8">
-                                <input type="text" name="ten_khoa_hoc" id="name" class="form-control" value="@isset($request['ten_khoa_hoc']){{ $request['ten_khoa_hoc'] }}@endisset">
+                                <input type="text" name="ten_lop" id="name" class="form-control" value="@isset($request['ten_khoa_hoc']){{ $request['ten_khoa_hoc'] }}@endisset">
                                 <span id="mes_sdt"></span>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="col-md-3 col-sm-4 control-label">Mô tả<span class="text-danger">(*)</span></label>
+                            <label for="email" class="col-md-3 col-sm-4 control-label">Số lượng học viên<span class="text-danger">(*)</span></label>
                             <div class="col-md-9 col-sm-8">
-                                <textarea name="mo_ta" class="form-control" id="exampleFormControlTextarea1" rows="3" value="@isset($request['mo_ta']){{ $request['mo_ta'] }}@endisset"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="col-md-3 col-sm-4 control-label">Giá<span class="text-danger">(*)</span></label>
-                            <div class="col-md-9 col-sm-8">
-                                <input type="text" name="gia" id="password" class="form-control" value="@isset($request['gia']){{ $request['gia'] }}@endisset">
+                                <input type="text" name="so_luong_hoc_vien" id="" class="form-control" value="@isset($request['mo_ta']){{ $request['mo_ta'] }}@endisset">
                                 <span id="mes_sdt"></span>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="col-md-3 col-sm-4 control-label">Khuyến mãi<span class="text-danger">(*)</span></label>
+                            <label for="email" class="col-md-3 col-sm-4 control-label">Khóa học<span class="text-danger">(*)</span></label>
                             <div class="col-md-9 col-sm-8">
-                                <select name="khuyen_mai" class="form-control" aria-label="Default select example">
-                                    <option value="1">Khuyến mãi</option>
-                                    <option value="0">Không khuyến mãi</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="col-md-3 col-sm-4 control-label">Danh mục<span class="text-danger">(*)</span></label>
-                            <div class="col-md-9 col-sm-8">
-                                <select name="categories_id" class="form-control" aria-label="Default select example">
-                                    @foreach($cateData as $item)
-                                        <option value="{{$item->id}}">{{$item->ten_danh_muc}}</option>
+                                <select name="id_khoa_hoc" class="form-control">
+                                    @foreach($dataCourse as $key => $val)
+                                        <option value="{{ $val->id }}">{{$val->ten_khoa_hoc}}</option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="col-md-3 col-sm-4 control-label">Số lượng bài tập<span class="text-danger">(*)</span></label>
+                            <label for="" class="col-md-3 col-sm-4 control-label">Giảng viên<span class="text-danger">(*)</span></label>
                             <div class="col-md-9 col-sm-8">
-                                <input type="text" name="so_luong_bai_tap" id="password" class="form-control" value="@isset($request['so_luong_bai_tap']){{ $request['so_luong_bai_tap'] }}@endisset">
-                                <span id="mes_sdt"></span>
+                                <select name="id_giao_vien" class="form-control" aria-label="Default select example">
+                                    @foreach($dataLect as $key => $val)
+                                        <option value="{{$val->id}}">{{ $val->ten_giao_vien }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-3 col-sm-4 control-label">Ảnh Khóa học</label>
+                            <label for="email" class="col-md-3 col-sm-4 control-label">Số giờ học<span class="text-danger">(*)</span></label>
                             <div class="col-md-9 col-sm-8">
-                                <div class="row">
-                                    <div class="col-xs-6">
-                                        <img id="anh_khoa_hoc_preview" src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg" alt="your image"
-                                             style="max-width: 200px; height:100px; margin-bottom: 10px;" class="img-fluid"/>
-                                        <input type="file" name="anh_khoa_hoc" accept="image/*"
-                                               class="form-control-file @error('anh_khoa_hoc') is-invalid @enderror" id="anh_khoa_hoc">
-                                        <label for="anh_khoa_hoc">Ảnh khóa học</label><br/>
-                                    </div>
-                                </div>
+                                <input type="text" name="so_gio_hoc" id="" class="form-control" value="@isset($request['so_luong_bai_tap']){{ $request['so_luong_bai_tap'] }}@endisset">
+                                <span id="mes_sdt"></span>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
             <!-- /.box-body -->
             <div class="text-center">
                 <button type="submit" class="btn btn-primary"> Save</button>
-                <a href="{{ route('route_BackEnd_courses_list') }}" class="btn btn-default">Cancel</a>
+                <a href="{{ route('route_BackEnd_class_list') }}" class="btn btn-default">Cancel</a>
             </div>
             <!-- /.box-footer -->
         </form>

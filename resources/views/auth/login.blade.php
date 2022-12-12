@@ -85,13 +85,13 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <form action="{{ url('/login') }}" method="post">
+        <form action="{{ url('/admin') }}" method="post">
             <div class="form-group has-feedback">
-                <input style="padding-left: 10px;" type="text" name="email" class="form-control" placeholder="Username or Email">
+                <input style="padding-left: 10px;" type="text" name="email" class="form-control" placeholder="Nhập tên đăng nhập hoặc email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input style="padding-left: 10px;" type="password" name="password" class="form-control" placeholder="Password">
+                <input style="padding-left: 10px;" type="password" name="password" class="form-control" placeholder="Mật khẩu">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">

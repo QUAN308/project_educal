@@ -54,6 +54,12 @@ class makerules extends FormRequest
                             "email" => "required",
                         ];
                     break;
+                    case "addClass":
+                        $rules = [
+                            "ten_giao_vien" => "required",
+                            "email" => "required",
+                        ];
+                    break;
                 }
             break;
         endswitch;

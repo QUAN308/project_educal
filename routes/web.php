@@ -21,8 +21,8 @@ Route::get('/course/{id}', "loadView@cateCourse");
 Route::get('/detail-course/{id}', "loadView@detailCourse");
 
 // Phần login
-Route::get('/login', ['as'=>'login', 'uses'=>'Auth\LoginController@formLogin']);
-Route::post('/login', ['as'=>'login', 'uses'=>'Auth\LoginController@postLogin']);
+Route::get('/admin', ['as'=>'admin', 'uses'=>'Auth\LoginController@formLogin']);
+Route::post('/admin', ['as'=>'admin', 'uses'=>'Auth\LoginController@postLogin']);
 Route::get('/logout', ['as'=>'logout', 'uses'=>'Auth\LoginController@logOut']);
 Route::middleware(['auth'])->group(function(){
     // USERS
@@ -49,4 +49,10 @@ Route::middleware(['auth'])->group(function(){
     Route::get("/lecturer/detail/{id}", "lecturers@detail")->name("route_BackEnd_lecturer_detail");
     Route::post("/lecturer/update/{id}", "lecturers@updateLecturer")->name("route_BackEnd_lecturer_update");
     Route::get("/lecturer/delete/{id}", "lecturers@deleteLecturer")->name("route_BackEnd_lecturer_delete");
+    // CLASSES
+    Route::get("/class", "Classes@listClass")->name("route_BackEnd_class_list");
+    Route::match(["get", "post"], "/class/add", "Classes@addClass")->name("route_BackEnd_class_add");
+    Route::get("/class/detail/{id}", "Classes@detail")->name("route_BackEnd_class_detail");
+    Route::post("/class/update/{id}", "Classes@updateClass")->name("route_BackEnd_class_update");
+    Route::get("/class/delete/{id}", "Classes@deleteClass")->name("route_BackEnd_class_delete");
 });

@@ -35,28 +35,28 @@ class DatabaseSeeder extends Seeder
         DB::table("users")->insert(
             $pushData
         );
-        DB::table("quyen_truy_cap")->insert(
-            [
-                [
-                    "id" => 1,
-                    "quyen_truy_cap" => "Quản trị viên",
-                    "created_at" => date("Y-m-d H:i:s"),
-                    "updated_at" => date("Y-m-d H:i:s")
-                ],
-                [
-                    "id" => 2,
-                    "quyen_truy_cap" => "Sinh viên",
-                    "created_at" => date("Y-m-d H:i:s"),
-                    "updated_at" => date("Y-m-d H:i:s")
-                ],
-                [
-                    "id" => 3,
-                    "quyen_truy_cap" => "Giảng viên",
-                    "created_at" => date("Y-m-d H:i:s"),
-                    "updated_at" => date("Y-m-d H:i:s")
-                ],
-            ]
-            );
+        // DB::table("quyen_truy_cap")->insert(
+        //     [
+        //         [
+        //             "id" => 1,
+        //             "quyen_truy_cap" => "Quản trị viên",
+        //             "created_at" => date("Y-m-d H:i:s"),
+        //             "updated_at" => date("Y-m-d H:i:s")
+        //         ],
+        //         [
+        //             "id" => 2,
+        //             "quyen_truy_cap" => "Sinh viên",
+        //             "created_at" => date("Y-m-d H:i:s"),
+        //             "updated_at" => date("Y-m-d H:i:s")
+        //         ],
+        //         [
+        //             "id" => 3,
+        //             "quyen_truy_cap" => "Giảng viên",
+        //             "created_at" => date("Y-m-d H:i:s"),
+        //             "updated_at" => date("Y-m-d H:i:s")
+        //         ],
+        //     ]
+        //     );
         // DB::table("danh_muc")->insert(
         //     [
         //         ["ten_danh_muc" => "Tiếng anh"],
@@ -81,5 +81,16 @@ class DatabaseSeeder extends Seeder
         // DB::table("khoa_hoc")->insert(
         //     $arrayCourses
         // );
+
+        DB::table("lop_hoc")->insert([
+            [
+                "id" => 0,
+                "ten_lop" => "Lớp tiếng anh",
+                "so_luong_hoc_vien" => 42,
+                "id_khoa_hoc" => 1,
+                "id_giao_vien" => 1,
+                "so_gio_hoc" => 130
+            ]
+        ]);
     }
 }

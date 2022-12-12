@@ -18,9 +18,8 @@ return new class extends Migration
             $table->string("ten_Lop");
             $table->string("so_luong_hoc_vien");
             $table->integer("id_khoa_hoc");
+            $table->integer("id_giao_vien");
             $table->string("so_gio_hoc");
-            $table->date("ngay_bat_dau");
-            $table->date("ngay_ket_thuc");
             $table->timestamps();
         });
     }

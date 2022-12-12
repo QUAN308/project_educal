@@ -16,8 +16,8 @@ class LoginController extends Controller
     }
     public function postLogin(Request $request){
     // $request->all(): lấy ra thông tin đăng nhập, email và password
-    // $request->input('email'): Lấy ra value của key email từ input
-    // Auth::attempt(['email'=>$email,'password'=>$password]): so sánh input và dữ liệu trên db có trùng nhau hay không
+    // $request->input("email"): Lấy ra value của key email từ input
+    // Auth::attempt(["email"=>$email,"password"=>$password]): so sánh input và dữ liệu trên db có trùng nhau hay không
         $rules = [
             "email" => "required|email",
             "password" => "required"
@@ -29,20 +29,20 @@ class LoginController extends Controller
         ];
         $validator = Validator::make($request->all(), $rules, $message);
         if($validator->fails()){
-            return redirect('/login')->withErrors($validator);
+            return redirect("/admin")->withErrors($validator);
         }else{
-            $email = $request->input('email');
-            $password = $request->input('password');
-            if(Auth::attempt(['email'=>$email, 'password'=>$password])){
-                return redirect('/list_user');
+            $email = $request->input("email");
+            $password = $request->input("password");
+            if(Auth::attempt(["email"=>$email, "password"=>$password])){
+                return redirect("/list_user");
             }else{
-                Session::flash('error', "sai email va mat khau");
-                return redirect('/login');
+                Session::flash("error", "sai email va mat khau");
+                return redirect("/admin");
             }
         }
     }
     public function logOut(){
         Auth::logout();
-        return redirect('/login');
+        return redirect("/admin");
     }
 }

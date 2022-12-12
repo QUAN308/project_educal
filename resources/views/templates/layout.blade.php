@@ -15,12 +15,14 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta id="_token" name="_token" content="{!! csrf_token() !!}"/>
     {{--  <meta name="csrf-token" content="{{ csrf_token() }}">--}}
-<!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="{{ asset('default/bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="{{ asset('default/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('default/bower_components/bootstrap/dist/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('default/bower_components/bootstrap/dist/css/bootstrap-theme.css') }}">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('default/bower_components/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('default/bower_components/font-awesome/css/font-awesome.min.css') }}">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="{{ asset('default/bower_components/Ionicons/css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('default/bower_components/Ionicons/css/ionicons.min.css') }}">
     <!-- iCheck for checkboxes and radio inputs -->
     <link rel="stylesheet" href="{{ asset('default/plugins/iCheck/all.css')}}">
 
@@ -162,7 +164,6 @@
                             <li>
                                 <p style="padding: 10px;">
                                     <i class="fa fa-user"></i>{{$obj->email}}}<br>
-
                                 </p>
                             </li>
                             <li class="user-footer">
@@ -207,7 +208,7 @@
                         <li><a href="/list_courses"><i class="fa fa-circle-o"></i> Khóa học</a></li>
                         <li><a href="/students"><i class="fa fa-circle-o"></i> Học viên</a></li>
                         <li><a href="/lecturer"><i class="fa fa-circle-o"></i> Giáo viên</a></li>
-                        <li><a href="/classes"></a></li>
+                        <li><a href="/class"><i class="fa fa-circle-o"></i> Lớp học</a></li>
                     </ul>
                 </li>
             </ul>

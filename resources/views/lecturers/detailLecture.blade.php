@@ -70,7 +70,7 @@
     @endif
 
     <!-- Phần nội dung riêng của action  -->
-        <form class="form-horizontal " action="{{ route('route_BackEnd_lecturer_update', ['id'=>request()->route('id')]) }}" method="post" enctype="multipart/form-data">
+        <form class="form-horizontal " action="{{ route('route_BackEnd_lecturer_update', ['id'=>request()->route('id')]) }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="box-body">
                 <div class="row">
@@ -135,8 +135,9 @@
                             <select name="gioi_tinh" id="">
                                 @if($detail_lecture->gioi_tinh = 0)
                                     <option selected value="0">Nam</option>
+                                @elseif($detail_lecture->gioi_tinh = 1)
+                                    <option selected value="1">Nữ</option>
                                 @endif
-                                <option value="1">Nữ</option>
                             </select>
                         </div>
                     </div>
@@ -148,6 +149,8 @@
                             <select name="chuyen_nganh" id="">
                                 @foreach($cateData as $key => $value)
                                     @if($detail_lecture->chuyen_nganh == $value->id)
+                                        <option selected value="{{$value->id}}">{{$value->ten_danh_muc}}</option>
+                                    @else
                                         <option value="{{$value->id}}">{{$value->ten_danh_muc}}</option>
                                     @endif
                                 @endforeach
@@ -157,17 +160,17 @@
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 col-sm-4 control-label">Ảnh giảng viên</label>
-                        <div class="col-md-9 col-sm-8">
-                            <div class="row">
-                                <div class="col-xs-6">
-                                    <img id="anh_preview" src="{{ $detail_lecture->hinh_anh?''.Storage::url($detail_lecture->hinh_anh):'http://placehold.it/100x100' }}" alt="your image"
-                                             style="max-width: 200px; height:100px; margin-bottom: 10px;" class="img-fluid"/>
-                                    <input type="file" name="hinh_anh" accept="image/*"
-                                               class="form-control-file @error('anh_khoa_hoc') is-invalid @enderror" id="anh_giang_vien">
-                                    <label for="anh_giang_vien">Ảnh giảng viên</label><br/>
-                                </div>
+                    <div class="col-md-9 col-sm-8">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <img id="anh_preview" src="{{ Storage::url($detail_lecture->hinh_anh) }}" alt="your image"
+                                    style="max-width: 200px; height:100px; margin-bottom: 10px;" class="img-fluid"/>
+                                <input type="file" name="hinh_anh" accept="image/*"
+                                    class="form-control-file @error('anh_khoa_hoc') is-invalid @enderror" id="anh_giang_vien" />
+                                <label for="anh_giang_vien">Ảnh giảng viên</label><br/>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
             <!-- /.box-body -->
@@ -188,7 +191,6 @@
             function readURL(input, selector) {
                 if (input.files && input.files[0]) {
                     let reader = new FileReader();
-
                     reader.onload = function (e) {
                         $(selector).attr('src', e.target.result);
                     };
@@ -198,7 +200,6 @@
             $("#anh_giang_vien").change(function () {
                 readURL(this, '#anh_preview');
             });
-
         });
     </script>
 @endsection

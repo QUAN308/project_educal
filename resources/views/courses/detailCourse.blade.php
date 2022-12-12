@@ -85,8 +85,7 @@
                         <div class="form-group">
                             <label for="email" class="col-md-3 col-sm-4 control-label">Mô tả<span class="text-danger">(*)</span></label>
                             <div class="col-md-9 col-sm-8">
-                                <input type="text" name="mo_ta" id="email" class="form-control" value="{{ $data_detail->mo_ta }}">
-                                <span id="mes_sdt"></span>
+                                <textarea name="mo_ta" class="form-control" id="exampleFormControlTextarea1" rows="3" value="">{{ $data_detail->mo_ta }}</textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -96,17 +95,34 @@
                                 <span id="mes_sdt"></span>
                             </div>
                         </div>
-                        <select name="khuyen_mai" class="form-select" aria-label="Default select example">
-                            <option value="1">Khuyến mãi</option>
-                            <option value="0">Không khuyến mãi</option>
-                        </select>
-                        <select name="categories_id" class="form-select" aria-label="Default select example">
-                            @foreach($cateData as $icate)
-                                <option value="{{$icate->id}}">{{$icate->ten_danh_muc}}</option>
-                            @endforeach
-                        </select>
                         <div class="form-group">
-                            <label for="email" class="col-md-3 col-sm-4 control-label">Số lượng bài tập<span class="text-danger">(*)</span></label>
+                            <label for="" class="col-md-3 col-sm-4 control-label">Khuyến mãi<span class="text-danger">(*)</span></label>
+                            <div class="col-md-9 col-sm-8">
+                                <select name="khuyen_mai" class="form-control" aria-label="Default select example">
+                                    @if($data_detail->khuyen_mai == 1)
+                                        <option selected value="1">Khuyến mãi</option>
+                                        <option value="0">Không khuyến mãi</option>
+                                    @elseif($data_detail->khuyen_mai == 0)
+                                        <option value="1">Khuyến mãi</option>
+                                        <option selected value="0">Không khuyến mãi</option>
+                                    @endif
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-md-3 col-sm-4 control-label">Danh mục<span class="text-danger">(*)</span></label>
+                            <div class="col-md-9 col-sm-8">
+                                <select name="categories_id" class="form-control" aria-label="Default select example">
+                                    @foreach($cateData as $icate)
+                                        @if($data_detail->categories_id == $icate->id)
+                                            <option value="{{$icate->id}}">{{$icate->ten_danh_muc}}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-md-3 col-sm-4 control-label">Bài giảng<span class="text-danger">(*)</span></label>
                             <div class="col-md-9 col-sm-8">
                                 <input type="text" name="so_luong_bai_tap" id="password" class="form-control" value="{{ $data_detail->so_luong_bai_tap }}">
                                 <span id="mes_sdt"></span>

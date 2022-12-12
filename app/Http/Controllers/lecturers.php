@@ -16,27 +16,27 @@ class lecturers extends Controller
         $this->v = [];
     }
     public function getLecturers(Request $request,$params = []){
-        $this->v['title_lecture'] = "Danh sách giảng viên";
+        $this->v["title_lecture"] = "Danh sách giảng viên";
         $modelLecture = new ModelsLecturers();
         $modelCate = new Categories();
-        $this->v['get_params'] = $request->all();
-        $this->v['data_lecture'] = $modelLecture->loadLectureOnPage($this->v['get_params']);
-        $this->v['data_cate'] = $modelCate->loadCateOnePage();
+        $this->v["get_params"] = $request->all();
+        $this->v["data_lecture"] = $modelLecture->loadLectureOnPage($this->v["get_params"]);
+        $this->v["data_cate"] = $modelCate->loadCateOnePage();
         return view("lecturers.lecturer", $this->v);
     }
     public function addLecturer(makerules $request, $params = []){
-        $this->v['title_add_lecture'] = "Thêm giảng viên";
+        $this->v["title_add_lecture"] = "Thêm giảng viên";
         $method_back = "route_BackEnd_lecturer_add";
         if($request->isMethod("post")){
             $dataLecture = [];
             $modelLecture = new ModelsLecturers();
-            $dataLecture['data_res'] = $request->post();
-            if ($request->hasFile('hinh_anh') && $request->file('hinh_anh')->isValid())
+            $dataLecture["data_res"] = $request->post();
+            if ($request->hasFile("hinh_anh") && $request->file("hinh_anh")->isValid())
             {
-                $dataLecture['data_res']['hinh_anh'] = $this->uploadFile($request->file('hinh_anh'));
+                $dataLecture["data_res"]["hinh_anh"] = $this->uploadFile($request->file("hinh_anh"));
             }
-            unset($dataLecture['data_res']['_token']);
-            $data = $modelLecture->saveAddLecture($dataLecture['data_res']);
+            unset($dataLecture["data_res"]["_token"]);
+            $data = $modelLecture->saveAddLecture($dataLecture["data_res"]);
             if($data == null){
                 return redirect()->route($method_back);
             }elseif($data > 0){
@@ -48,39 +48,40 @@ class lecturers extends Controller
         return view("lecturers.addLecture", $this->v);
     }
     public function detail($id, $params = []){
-        $this->v['title_giao_vien'] = "Chi tiết giáo viên";
+        $this->v["title_giao_vien"] = "Chi tiết giáo viên";
         $modelLecture = new ModelsLecturers();
         $modelCate = new Categories();
-        $this->v['cateData'] = $modelCate->loadCateOnePage();
-        $this->v['detail_lecture'] = $modelLecture->detailLecturer($id);
-        return view('lecturers.detailLecture', $this->v);
+        $this->v["cateData"] = $modelCate->loadCateOnePage();
+        $this->v["detail_lecture"] = $modelLecture->detailLecturer($id);
+        return view("lecturers.detailLecture", $this->v);
     }
-    public function updateLecturer($id, Request $request, $params = []){
+    public function updateLecturer($id, Request $request){
         $routeBack = "route_BackEnd_lecturer_detail";
-        $params['cols'] = $request->post();
-        unset($params['cols']['_token']);
+        $params = [];
+        $params["cols"] = $request->post();
+        unset($params["cols"]["_token"]);
         $modelUpdate = new ModelsLecturers();
-        $params['cols']['id'] = $id;
+        $params["cols"]["id"] = $id;
         $res = $modelUpdate->saveUpdateLecture($params);
         if($res == null){
-            return redirect()->route($routeBack, ['id'=>$id]);
+            return redirect()->route($routeBack, ["id"=>$id]);
         }elseif($res == 1){
-            Session::flash('success', "Cập nhật giảng viên Thành công");
-            return redirect()->route($routeBack, ['id'=>$id]);
+            Session::flash("success", "Cập nhật giảng viên Thành công");
+            return redirect()->route($routeBack, ["id"=>$id]);
         }else{
-            Session::flash('error', 'Lỗi cập nhật giảng viên ' .$id);
-            return redirect()->route($routeBack, ['id' => $id]);
+            Session::flash("error", "Lỗi cập nhật giảng viên " .$id);
+            return redirect()->route($routeBack, ["id" => $id]);
         }
     }
     public function deleteLecturer($id){
-        $route_back = "route_BackEnd_courses_list";
-       $modelDelete = new ModelsLecturers();
-       $modelDelete->letureDelete($id);
-       Session::flash("success", "Đã xóa giảng viên ".$id);
-       return redirect()->route($route_back);
+        $route_back = "route_BackEnd_lecturer_list";
+        $modelDelete = new ModelsLecturers();
+        $modelDelete->letureDelete($id);
+        Session::flash("success", "Đã xóa giảng viên ".$id);
+        return redirect()->route($route_back);
     }
     public function uploadFile($file) {
-        $fileName = time().'_'.$file->getClientOriginalName();
-        return $file->storeAs('cmnd',$fileName,'public');
+        $fileName = time()."_".$file->getClientOriginalName();
+        return $file->storeAs("cmnd",$fileName,"public");
     }
 }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string("ten_khoa_hoc");
             $table->string("hinh_anh");
-            $table->string("mo_ta");
+            $table->longText("mo_ta");
             $table->double("gia");
             $table->integer("khuyen_mai")->default(1);
             $table->integer("categories_id");
